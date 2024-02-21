@@ -8,8 +8,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\BaseInfo\BaseInfo.csproj" />
       <ProjectReference Include="..\FinLibraryModern\FinLibraryModern.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+        <Using Include="System.Console" Static="true"/>
     </ItemGroup>
 
 </Project>
