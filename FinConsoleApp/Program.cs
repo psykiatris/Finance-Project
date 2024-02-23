@@ -1,9 +1,11 @@
 ﻿
 using Finance.Shared;
+using Microsoft.VisualBasic;
 
 double pay = Calculate.AmortizeLoan(114000, 360, 5);
 WriteLine($"Your estimated payment is: {pay:C}");
-
-BaseInfo patrick = new(150000, 360, 7.375);
-WriteLine($"Payment on {patrick.Balance:C} is {Calculate.AmortizeLoan(patrick.Balance, patrick.TermInMonths, patrick.Apr):C}");
-WriteLine($"APR: {patrick.Apr}%");
+DateTime date = new(2022, 8, 22);
+BaseInfo patrick = new(114000, 360, 5.0, date);
+BaseInfo gloria = new(50000, 60, 7.25);
+WriteLine($"Patrick's loan began on {patrick.StartDate}");
+WriteLine($"Gloria's account began {gloria.StartDate}");;

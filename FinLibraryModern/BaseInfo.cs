@@ -1,4 +1,7 @@
 
+using System.Security.Principal;
+using Microsoft.VisualBasic;
+
 namespace Finance.Shared;
 /*
  * This class obtains basic account information so that
@@ -31,10 +34,10 @@ public class BaseInfo
 
     }
 
-    public BaseInfo(double p, double period, double rate = 0.0)
+    public BaseInfo(double p, double period, double rate = 0.0, DateTime date = default(DateTime))
     {
         
-        StartDate = DateTime.Today;
+        StartDate = date;
         Name = "AccountHolder";
         AccountNumber = 0;
         Balance = p;
@@ -43,9 +46,9 @@ public class BaseInfo
     }
 
     public BaseInfo(string? name, int account, double p,
-        double period, double rate = 0.0)
+        double period, double rate = 0.0, DateTime date = default(DateTime))
     {
-        StartDate = DateTime.Today;
+        StartDate = date;
         Name = name;
         AccountNumber = account;
         Balance = p;
