@@ -1,8 +1,6 @@
 
-using System.Security.Principal;
-using Microsoft.VisualBasic;
-
 namespace Finance.Shared;
+
 /*
  * This class obtains basic account information so that
  * calculations can be made and saved, printed to the
@@ -10,14 +8,64 @@ namespace Finance.Shared;
  */
 public class BaseInfo
 {
-    #region Fields for basic information regarding user.
+    #region Properties for basic information regarding user.
 
-    public DateTime StartDate;
-    public string? Name;
-    public double Balance;
-    public double Apr;
-    public double TermInMonths;
-    public int AccountNumber;
+    public readonly DateTime CreateDate; // When object is created. A timestamp
+    private DateTime? _periodStartDate = DateTime.Today;    // Initialize it to current date.
+
+    public DateTime? StartDate // When period starts. Input by user
+    {
+        get { return _periodStartDate; }
+        set
+        {
+            if (value.HasValue)
+            {
+                {
+                    _periodStartDate = value;
+                }
+            }
+        }
+}
+
+    private string? _name;
+
+    public string? Name
+    {
+        get { return _name; }
+        set { _name = value; }
+    }
+
+    private double _balance;
+
+    public double Balance
+    {
+        get { return _balance; }
+        set { _balance = value; }
+    }
+
+    private double _apr;
+
+    public double Apr
+    {
+        get { return _apr; }
+        set { _apr = value; }
+    }
+
+    private double _term;
+
+    public double TermInMonths
+    {
+        get { return _term; }
+        set { _term = value; }
+    }
+
+    private int _accountNum;
+
+    public int AccountNumber
+    {
+        get { return _accountNum; }
+        set { _accountNum = value; }
+    }
 
     #endregion
 
@@ -25,30 +73,28 @@ public class BaseInfo
 
     public BaseInfo()
     {
-        StartDate = DateTime.Today;
+        CreateDate = DateTime.Now;
         Name = "AccountHolder";
         Balance = 0;
         AccountNumber = 0;
         Apr = 0;
         TermInMonths = 1;
-
     }
 
-    public BaseInfo(double p, double period, double rate = 0.0, DateTime date = default(DateTime))
+    public BaseInfo(double p, double period, double rate = 0.0)
     {
-        
-        StartDate = date;
+        CreateDate = DateTime.Now;
         Name = "AccountHolder";
         AccountNumber = 0;
         Balance = p;
-        Apr = rate;     // Interest rate defaults to zero.
+        Apr = rate; // Interest rate defaults to zero.
         TermInMonths = period;
     }
 
     public BaseInfo(string? name, int account, double p,
-        double period, double rate = 0.0, DateTime date = default(DateTime))
+        double period, double rate = 0.0)
     {
-        StartDate = date;
+        CreateDate = DateTime.Now;
         Name = name;
         AccountNumber = account;
         Balance = p;
