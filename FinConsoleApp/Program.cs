@@ -12,3 +12,4 @@ WriteLine($"Patrick's account was created {patrick.CreateDate}");
 WriteLine($"Gloria's loan began on {gloria.StartDate}.");
 WriteLine($"Gloria's accpimt was created {gloria.CreateDate}");
 WriteLine($"Patrick's loan began {patrick.StartDate}");
+WriteLine($"Patrick's account #: {patrick.AccountNumber}, \nGloria's account #: {gloria.AccountNumber}");

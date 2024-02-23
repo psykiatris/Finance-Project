@@ -12,7 +12,6 @@ public class BaseInfo
 
     public readonly DateTime CreateDate; // When object is created. A timestamp
     private DateTime? _periodStartDate = DateTime.Today;    // Initialize it to current date.
-
     public DateTime? StartDate // When period starts. Input by user
     {
         get { return _periodStartDate; }
@@ -76,7 +75,7 @@ public class BaseInfo
         CreateDate = DateTime.Now;
         Name = "AccountHolder";
         Balance = 0;
-        AccountNumber = 0;
+        AccountNumber = GetHashCode();
         Apr = 0;
         TermInMonths = 1;
     }
@@ -85,18 +84,18 @@ public class BaseInfo
     {
         CreateDate = DateTime.Now;
         Name = "AccountHolder";
-        AccountNumber = 0;
+        AccountNumber = GetHashCode();
         Balance = p;
         Apr = rate; // Interest rate defaults to zero.
         TermInMonths = period;
     }
 
-    public BaseInfo(string? name, int account, double p,
+    public BaseInfo(string? name, double p,
         double period, double rate = 0.0)
     {
         CreateDate = DateTime.Now;
         Name = name;
-        AccountNumber = account;
+        AccountNumber = GetHashCode();
         Balance = p;
         TermInMonths = period;
         Apr = rate;
