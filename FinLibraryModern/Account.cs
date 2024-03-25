@@ -4,10 +4,10 @@ public class Account
 {
     public decimal Balance { get; set; }
     public int AccountNumber { get; set; }
-    public decimal TerInMonths { get; set; }
+    public decimal TermInMonths { get; set; }
     public decimal InterestRate { get; set; }
-    public DateTime StartDate { get; set; }
-    public DateTime AccountOpenDate;
+    public DateTime StartDate { get; set; }     // Loan start date
+    public DateTime AccountOpenDate;        // When object is instantiated & never changes.
 
 
 }
