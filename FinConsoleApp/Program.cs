@@ -1,4 +1,5 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
 using Finance.Shared;
@@ -13,5 +14,7 @@ using Finance.Shared;
 WriteLine($"With a balance of: {basePatrick.Balance:C} at {basePatrick.Apr}% over a period of {basePatrick.TermInMonths / 12} years,");
 WriteLine($"The payment would be: {Calculate.CalculateAmortozation(basePatrick.Balance,basePatrick.Apr, 360):C}.");
 WriteLine();
+double pymt =
+    Calculate.CalculateAmortozation(basePatrick.Balance, basePatrick.Apr, 360);
 WriteLine($"Account #: {basePatrick.AccountNumber}");
 

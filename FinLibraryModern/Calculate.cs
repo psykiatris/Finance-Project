@@ -1,4 +1,6 @@
-﻿namespace Finance.Shared;
+﻿using System.Runtime.CompilerServices;
+
+namespace Finance.Shared;
 
 public class Calculate
 {
@@ -7,9 +9,13 @@ public class Calculate
     {
         double moInt = (rate == 0) ? 0.0 : (rate / (12 * 100));
 
+        double payments = (moInt == 0) ? (p / periods) : (p * (moInt / (1 - (Math.Pow(1 / (1 + moInt), periods)))));
 
-        return (moInt == 0) ? (p / periods) : (p * (moInt / (1 - (Math.Pow(1 / (1 + moInt), periods)))));
+
+        return payments;
 
 
     }
+
 }
+
