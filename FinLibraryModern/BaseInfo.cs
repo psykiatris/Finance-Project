@@ -1,5 +1,5 @@
 
-namespace Finance.Shared;
+namespace Boyd.Shared;
 
 /*
  * This class obtains basic account information so that

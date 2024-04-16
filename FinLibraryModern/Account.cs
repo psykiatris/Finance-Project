@@ -1,13 +1,8 @@
-namespace Finance.Shared;
+using TIKSN.Finance;
+namespace Boyd.Shared;
 
 public class Account
 {
-    public decimal Balance { get; set; }
-    public int AccountNumber { get; set; }
-    public decimal TermInMonths { get; set; }
-    public decimal InterestRate { get; set; }
-    public DateTime StartDate { get; set; }     // Loan start date
-    public DateTime AccountOpenDate;        // When object is instantiated & never changes.
 
 
 }

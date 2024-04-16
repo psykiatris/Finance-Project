@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Net.Http.Headers;
 using System.Runtime.CompilerServices;
-using Finance.Shared;
+using Boyd.Shared;
 
 //WriteLine("The Main entry for -> Consoles");
  BaseInfo basePatrick = new()

@@ -1,6 +1,6 @@
 ﻿using System.Runtime.CompilerServices;
 
-namespace Finance.Shared;
+namespace Boyd.Shared;
 
 public class Calculate
 {

@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 
-namespace Finance.Shared;
+namespace Boyd.Shared;
 
 public class Logging
 {
